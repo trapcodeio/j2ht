@@ -12,11 +12,13 @@
   },
   "dependencies": {
     "html-creator": "^0.4.4",
-    "pretty": "^2.0.0",
-    "xpresser": "^0.2.47"
+    "pretty": "^2.0.0"
   },
   "keywords": [
     "Javscript",
     "html"
-  ]
+  ],
+  "devDependencies": {
+    "xpresser": "^0.2.47"
+  }
 }
