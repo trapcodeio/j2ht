@@ -6,6 +6,7 @@
   "author": "trapcodeio",
   "license": "MIT",
   "private": false,
+  "repository": "https://github.com/trapcodeio/j2ht.git",
   "scripts": {
     "test-server": "nodemon test/server.js"
   },
@@ -13,5 +14,9 @@
     "html-creator": "^0.4.4",
     "pretty": "^2.0.0",
     "xpresser": "^0.2.47"
-  }
+  },
+  "keywords": [
+    "Javscript",
+    "html"
+  ]
 }
