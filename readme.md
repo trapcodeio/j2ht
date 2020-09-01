@@ -1,5 +1,5 @@
 # J2ht (Under Development)
-J2ht is a **Javascript to html template Engine** created for no reason at the time of posting.
+J2ht is a **Javascript to html template Engine**
 
 The idea came when I stumbled upon this library [html-creator](https://www.npmjs.com/package/html-creator), and before then i have always wanted to **extend** html without using any template engine just some codes, and I ended up with a template engine lol. 
 
