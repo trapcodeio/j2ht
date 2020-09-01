@@ -1,0 +1,17 @@
+{
+  "name": "j2ht",
+  "version": "0.1.1",
+  "description": "Javascript to html template engine.",
+  "main": "index.js",
+  "author": "trapcodeio",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "test-server": "nodemon test/server.js"
+  },
+  "dependencies": {
+    "html-creator": "^0.4.4",
+    "pretty": "^2.0.0",
+    "xpresser": "^0.2.47"
+  }
+}
