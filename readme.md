@@ -3,7 +3,7 @@ J2ht is a **Javascript to html template Engine** created for no reason at the ti
 
 The idea came when I stumbled upon this library [html-creator](https://www.npmjs.com/package/html-creator), and before then i have always wanted to **extend** html without using any template engine just some codes, and I ended up with a template engine lol. 
 
-It may feel weird when you think about it but i find it kinda fun and hope you do.
+It may feel weird when you think about it but I find it kinda fun and hope you do too.
 
 ## Installation
 ### Npm
@@ -89,7 +89,7 @@ console.log(pretty(template2));
 ```
 
 ## Elements
-For now only few html contents are out of the box. i will add new ones when in the near future.
+For now only few html elements are out of the box. i will add new ones in the near future.
 But adding yours is not difficult.
 
 if you take a look at the `elements.js` file you can see how default elements are created.
