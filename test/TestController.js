@@ -3,8 +3,10 @@ const aboutPage = require('./views/about.j2h')
 const pretty = require('pretty');
 
 module.exports = {
-    index() {
-        const html = indexPage(true);
+    index(http) {
+        const isRegister = http.query('register', false);
+
+        const html = indexPage(isRegister);
         const shouldPretty = false;
         return shouldPretty ? pretty(html) : html
     },
@@ -13,6 +15,5 @@ module.exports = {
         const html = aboutPage();
         const shouldPretty = false;
         return shouldPretty ? pretty(html) : html
-        // return http.view('index');
     }
 }

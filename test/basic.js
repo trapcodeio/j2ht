@@ -1,5 +1,5 @@
-const {pretty, RawHtml, Elements, FromFile} = require('../index');
-const { Doctype, Head, Title, Body, H2, H5,  Html } = require('../elements');
+const {pretty, RawHtml, Elements} = require('../index');
+const {Doctype, Head, Title, Body, H2, H5, Html} = require('../elements');
 
 const user = 'paul';
 

@@ -25,7 +25,7 @@ If you clone this repo there are some examples you can examine using your I.D.E
 ## Basic Usage
 ```javascript
 const {pretty, RawHtml, Elements} = require('j2ht');
-const { Doctype, Head, Title, Body, H2, H5 } = require('j2ht/elements');
+const { Doctype, Html, Head, Title, Body, H2, H5 } = require('j2ht/elements');
 
 const user = 'paul';
 

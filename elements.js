@@ -185,8 +185,16 @@ exports.Link = () => new HTMLElement('link').noContent();
 
 /**
  * <section>
- * @param content
+ * @param contents
  * @return {HTMLElement}
  * @constructor
  */
-exports.Section = (...content) => new HTMLElement('section').content(content);
+exports.Section = (...contents) => new HTMLElement('section').content(contents);
+
+/**
+ * <form>
+ * @param contents
+ * @return {HTMLElement}
+ * @constructor
+ */
+exports.Form = (...contents) => new HTMLElement('form').content(contents);
