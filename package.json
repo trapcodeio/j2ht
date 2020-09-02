@@ -20,8 +20,5 @@
   ],
   "devDependencies": {
     "xpresser": "^0.2.47"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }
