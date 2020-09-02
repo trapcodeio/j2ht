@@ -1,6 +1,6 @@
 {
   "name": "j2ht",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Javascript to html template engine.",
   "main": "index.js",
   "author": "trapcodeio",
