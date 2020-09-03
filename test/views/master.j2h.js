@@ -1,7 +1,7 @@
 const {Elements, RawHtml} = require("../../index");
 const {Doctype, Body, Html} = require("../../elements");
 
-module.exports = (...args) => {
+module.exports = (...contents) => {
     return Elements(
         Doctype(),
         Html(
@@ -13,7 +13,7 @@ module.exports = (...args) => {
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
                 </head>
             `),
-            Body(...args)
+            Body(...contents)
         ).attr('lang', 'en')
     )
 }
