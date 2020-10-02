@@ -1,7 +1,9 @@
 const path = require('path');
 const xpresser = require('xpresser');
 
+// Initialise Xpresser
 const $ = xpresser({
+    env: 'development',
     name: 'J2h Test Server',
     paths: {
         base: path.resolve(__dirname + '/../'),
@@ -11,10 +13,13 @@ const $ = xpresser({
     }
 });
 
+
+// Add Routes on boot
 $.on.boot((next) => {
     $.router.get('/', 'Test@index');
     $.router.get('/about', 'Test@about');
-    return next()
-})
+    return next();
+});
 
+// Boot
 $.boot();

@@ -19,6 +19,6 @@
     "html"
   ],
   "devDependencies": {
-    "xpresser": "^0.2.47"
+    "xpresser": "^0.2.61"
   }
 }

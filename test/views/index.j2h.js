@@ -8,7 +8,7 @@ module.exports = (isRegister) => {
             Bulma.Container(
                 Bulma.Columns(
                     Bulma.Column(4, [
-                        H1('Login').class('is-size-3 has-text-centered has-text-info'),
+                        H1(isRegister ? 'Register' : 'Login').class('is-size-3 has-text-centered has-text-info'),
 
                         Bulma.FormField(
                             Label('Username:').attr({for: 'username'}),
@@ -31,7 +31,7 @@ module.exports = (isRegister) => {
                         ] : [
                             Bulma.PrimaryButton('Login').class('is-pulled-left'),
                             Bulma.DarkButton('Register').class('is-pulled-right')
-                                .tag('a').attr('href', '?register=true')
+                                .tag('a').attr('href', '?register=true'),
                         ]).class('is-clearfix mt-5')
                     ]).class('is-offset-4')
                 ),

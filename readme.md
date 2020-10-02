@@ -38,7 +38,7 @@ const template = Elements(
              RawHtml(`<h5>A message from RawHtml</h5>`),
             
              // Conditional views. 
-             () => user === 'paul' ?
+             user === 'paul' ?
                  H5('Hey Paul 👋') : H5('Hey unknown user! 😏')
         ),
     )
@@ -131,18 +131,18 @@ exports.SuccessButton = (...content) => Button(...content).class('button is-succ
 Notice how we always use spread operators? this is because of the syntax concept where Elements are functions, and their arguments are child contents.
 ```javascript
 const {Div} = require('j2ht/elements');
-const {PrimaryButton, DangerButton} = require('./bulma-buttons');
+const {PrimaryButton, SuccessButton} = require('./bulma-buttons');
 
 Div(
     PrimaryButton('Save'),
-    DangerButton('Cancel')
+    SuccessButton('Cancel')
 )
 ```
-`Div` is a function while `H1` and `H2` are arguments. you can also pass them as an array.
+`Div` is a function while it's children are arguments. you can also pass them as an array.
 ```javascript
 Div([
     PrimaryButton('Save'),
-    DangerButton('Cancel')
+    SuccessButton('Cancel')
 ])
 ```
 Both will render
