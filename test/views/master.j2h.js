@@ -1,5 +1,6 @@
-const {Elements, RawHtml} = require("../../index");
-const {Doctype, Body, Html} = require("../../elements");
+const {Section, Container} = require("./bulma-components");
+const {Elements, RawHtml} = require("../../");
+const {Doctype, Body, Html} = require("../../js/elements");
 
 module.exports = (...contents) => {
     return Elements(
@@ -13,7 +14,7 @@ module.exports = (...contents) => {
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
                 </head>
             `),
-            Body(...contents)
+            Body(Section(Container(...contents)))
         ).attr('lang', 'en')
     )
 }

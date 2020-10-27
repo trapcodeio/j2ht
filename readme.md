@@ -18,14 +18,14 @@ yarn add j2ht
 ## Demo
 If you clone this repo there are some examples you can examine using your I.D.E
 
-* node tests/basic.js  - A basic console example
-* node tests/server.js  - A server example using [Xpresser](https://www.npmjs.com/package/xpresser)
-* node tests/merge.js  - An example showing how to import views and merge them.
+* `npm run test:basic`  - A basic console example
+* `npm run test:server`  - A server example using [Xpresser](https://www.npmjs.com/package/xpresser)
+* `npm run test:merge`  - An example showing how to import views and merge them.
 
 ## Basic Usage
 ```javascript
 const {pretty, RawHtml, Elements} = require('j2ht');
-const { Doctype, Html, Head, Title, Body, H2, H5 } = require('j2ht/elements');
+const { Doctype, Html, Head, Title, Body, H2, H5 } = require('j2ht/js/elements');
 
 const user = 'paul';
 
@@ -92,20 +92,20 @@ console.log(pretty(template2));
 For now only few html elements are out of the box. i will add new ones in the near future.
 But adding yours is not difficult.
 
-if you take a look at the `elements.js` file you can see how default elements are created.
+if you take a look at the `elements.ts` file you can see how default elements are created.
 <br/> For example `<div>` was created using the following line
 
 ```javascript
-const {HTMLElement} = require('j2ht');
-exports.Div = (...contents) => new HTMLElement('div').content(contents);
+const {HtmlElement} = require('j2ht');
+exports.Div = (...contents) => new HtmlElement('div').content(contents);
 
 // To create a table element
-exports.Table = (...contents) => new HTMLElement('table').content(contents);
+exports.Table = (...contents) => new HtmlElement('table').content(contents);
 ```
 
-Every `HTMLElement` instance has a `render()` method that builds it and returns html data
+Every `HtmlElement` instance has a `render()` method that builds it and returns html data
 ```javascript
-const {Div, H1} = require('j2ht/elements');
+const {Div, H1} = require('j2ht/js/elements');
 
 const component = Div(H1('Hello World'))
 
@@ -122,7 +122,7 @@ j2ht being javascript can be easily extendable.
 
 Lets make a bulma buttons component `bulma-buttons.js`
 ```javascript
-const {Button} = require('j2ht/elements');
+const {Button} = require('j2ht/js/elements');
 
 exports.PrimaryButton = (...content) => Button(...content).class('button is-primary');
 exports.SuccessButton = (...content) => Button(...content).class('button is-success');
@@ -130,7 +130,7 @@ exports.SuccessButton = (...content) => Button(...content).class('button is-succ
 
 Notice how we always use spread operators? this is because of the syntax concept where Elements are functions, and their arguments are child contents.
 ```javascript
-const {Div} = require('j2ht/elements');
+const {Div} = require('j2ht/js/elements');
 const {PrimaryButton, SuccessButton} = require('./bulma-buttons');
 
 Div(

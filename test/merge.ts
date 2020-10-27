@@ -1,4 +1,4 @@
-const {pretty, Elements, FromFile} = require('../index');
+import {pretty, Elements, FromFile} from '../index';
 
 const template2 = Elements(
     FromFile(__dirname + '/html/header.html'),

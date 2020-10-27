@@ -1,5 +1,6 @@
 const Master = require('./master.j2h');
-const {RawHtml, H3} = require("../../elements");
+const {RawHtml} = require("../../");
+const {H3} = require("../../js/elements");
 
 module.exports = () =>{
     return Master(

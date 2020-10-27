@@ -1,4 +1,4 @@
-const {Div, Section, Button}= require('../../elements');
+const {Div, Section, Button}= require('../../js/elements');
 
 exports.Section = (...contents) => Section(...contents).class('section');
 exports.Container = (...contents) => Div(...contents).class('container');
