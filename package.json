@@ -1,6 +1,6 @@
 {
   "name": "j2ht",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Javascript to html template engine.",
   "main": "js/index.js",
   "types": "types/index.d.ts",
