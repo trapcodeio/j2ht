@@ -9,13 +9,13 @@
   "private": false,
   "repository": "https://github.com/trapcodeio/j2ht.git",
   "scripts": {
-    "prepare": "tsc -p tsconfig.json",
+    "prepublishOnly": "tsc -p tsconfig.json",
     "test:basic": "ts-node-dev --respawn --transpile-only test/basic.ts",
     "test:merge": "ts-node-dev --respawn --transpile-only test/merge.ts",
     "test:server": "nodemon test/server.js"
   },
   "dependencies": {
-    "html-creator": "^0.6.1",
+    "html-creator": "^0.4.4",
     "pretty": "^2.0.0"
   },
   "keywords": [
