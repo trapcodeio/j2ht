@@ -1,6 +1,6 @@
-import HtmlElement = require('./lib/HtmlElement');
-import {RawHtml} from "./index";
-import {HtmlElementContent} from "./lib/custom_types";
+import HtmlElement = require("./lib/HtmlElement");
+import { RawHtml } from "./index";
+import { HtmlElementContent } from "./lib/custom_types";
 
 /**
  * <head>
@@ -8,14 +8,15 @@ import {HtmlElementContent} from "./lib/custom_types";
  * @constructor
  * @param contents
  */
-export const Head = (...contents: HtmlElementContent[]) => new HtmlElement('head').contents(contents);
+export const Head = (...contents: HtmlElementContent[]) =>
+    new HtmlElement("head").contents(contents);
 
 /**
  * <meta>
  * @return {HtmlElement}
  * @constructor
  */
-export const Meta = () => new HtmlElement('meta').noContent();
+export const Meta = () => new HtmlElement("meta").noContent();
 
 /**
  * <body>
@@ -23,14 +24,16 @@ export const Meta = () => new HtmlElement('meta').noContent();
  * @constructor
  * @param contents
  */
-export const Body = (...contents: HtmlElementContent[]) => new HtmlElement('body').contents(contents);
+export const Body = (...contents: HtmlElementContent[]) =>
+    new HtmlElement("body").contents(contents);
 
 /**
  * <textarea>
  * @return {HtmlElement}
  * @constructor
  */
-export const Textarea = (content: HtmlElementContent) => new HtmlElement('textarea').content(content);
+export const Textarea = (content: HtmlElementContent) =>
+    new HtmlElement("textarea").content(content);
 
 /**
  * <input/>
@@ -40,29 +43,27 @@ export const Textarea = (content: HtmlElementContent) => new HtmlElement('textar
  * @constructor
  */
 export const Input = (type: string, name: string) => {
-    const element = new HtmlElement('input');
-    if (type)
-        element.attr({type})
+    const element = new HtmlElement("input");
+    if (type) element.attr({ type });
 
-    if (name)
-        element.attr({name})
+    if (name) element.attr({ name });
 
-    return element.noContent()
-}
+    return element.noContent();
+};
 
 /**
  * <template/>
  * @return {HtmlElement}
  * @constructor
  */
-export const Template = () => new HtmlElement('template');
+export const Template = () => new HtmlElement("template");
 
 /**
  * <br/>
  * @return {HtmlElement}
  * @constructor
  */
-export const Br = () => new HtmlElement('br').noContent();
+export const Br = () => new HtmlElement("br").noContent();
 
 /**
  * <div>
@@ -70,7 +71,7 @@ export const Br = () => new HtmlElement('br').noContent();
  * @constructor
  * @param contents
  */
-export const Div = (...contents: HtmlElementContent[]) => new HtmlElement('div').contents(contents);
+export const Div = (...contents: HtmlElementContent[]) => new HtmlElement("div").contents(contents);
 
 /**
  * <h1>
@@ -78,7 +79,7 @@ export const Div = (...contents: HtmlElementContent[]) => new HtmlElement('div')
  * @constructor
  * @param contents
  */
-export const H1 = (...contents: HtmlElementContent[]) => new HtmlElement('h1').contents(contents);
+export const H1 = (...contents: HtmlElementContent[]) => new HtmlElement("h1").contents(contents);
 
 /**
  * <h2>
@@ -86,7 +87,7 @@ export const H1 = (...contents: HtmlElementContent[]) => new HtmlElement('h1').c
  * @return {HtmlElement}
  * @constructor
  */
-export const H2 = (...contents: HtmlElementContent[]) => new HtmlElement('h2').contents(contents);
+export const H2 = (...contents: HtmlElementContent[]) => new HtmlElement("h2").contents(contents);
 
 /**
  * <h3>
@@ -94,7 +95,7 @@ export const H2 = (...contents: HtmlElementContent[]) => new HtmlElement('h2').c
  * @return {HtmlElement}
  * @constructor
  */
-export const H3 = (...contents: HtmlElementContent[]) => new HtmlElement('h3').contents(contents);
+export const H3 = (...contents: HtmlElementContent[]) => new HtmlElement("h3").contents(contents);
 
 /**
  * <h4>
@@ -102,7 +103,7 @@ export const H3 = (...contents: HtmlElementContent[]) => new HtmlElement('h3').c
  * @return {HtmlElement}
  * @constructor
  */
-export const H4 = (...contents: HtmlElementContent[]) => new HtmlElement('h4').contents(contents);
+export const H4 = (...contents: HtmlElementContent[]) => new HtmlElement("h4").contents(contents);
 
 /**
  * <h5>
@@ -110,7 +111,7 @@ export const H4 = (...contents: HtmlElementContent[]) => new HtmlElement('h4').c
  * @return {HtmlElement}
  * @constructor
  */
-export const H5 = (...contents: HtmlElementContent[]) => new HtmlElement('h5').contents(contents);
+export const H5 = (...contents: HtmlElementContent[]) => new HtmlElement("h5").contents(contents);
 
 /**
  * <h6>
@@ -118,8 +119,7 @@ export const H5 = (...contents: HtmlElementContent[]) => new HtmlElement('h5').c
  * @return {HtmlElement}
  * @constructor
  */
-export const H6 = (...contents: HtmlElementContent[]) => new HtmlElement('h6').contents(contents);
-
+export const H6 = (...contents: HtmlElementContent[]) => new HtmlElement("h6").contents(contents);
 
 /**
  * <p>
@@ -127,14 +127,15 @@ export const H6 = (...contents: HtmlElementContent[]) => new HtmlElement('h6').c
  * @return {HtmlElement}
  * @constructor
  */
-export const P = (...contents: HtmlElementContent[]) => new HtmlElement('p').contents(contents);
+export const P = (...contents: HtmlElementContent[]) => new HtmlElement("p").contents(contents);
 
 /**
  * <span>
  * @return {HtmlElement}
  * @constructor
  */
-export const Span = (...contents: HtmlElementContent[]) => new HtmlElement('span').contents(contents);
+export const Span = (...contents: HtmlElementContent[]) =>
+    new HtmlElement("span").contents(contents);
 
 /**
  * <button>
@@ -142,7 +143,8 @@ export const Span = (...contents: HtmlElementContent[]) => new HtmlElement('span
  * @return {HtmlElement}
  * @constructor
  */
-export const Button = (...contents: HtmlElementContent[]) => new HtmlElement('button').contents(contents);
+export const Button = (...contents: HtmlElementContent[]) =>
+    new HtmlElement("button").contents(contents);
 
 /**
  * <script>
@@ -150,7 +152,8 @@ export const Button = (...contents: HtmlElementContent[]) => new HtmlElement('bu
  * @return {HtmlElement}
  * @constructor
  */
-export const Script = (...contents: HtmlElementContent[]) => new HtmlElement('script').contents(contents);
+export const Script = (...contents: HtmlElementContent[]) =>
+    new HtmlElement("script").contents(contents);
 
 /**
  * <label>
@@ -158,7 +161,8 @@ export const Script = (...contents: HtmlElementContent[]) => new HtmlElement('sc
  * @return {HtmlElement}
  * @constructor
  */
-export const Label = (...contents: HtmlElementContent[]) => new HtmlElement('label').contents(contents);
+export const Label = (...contents: HtmlElementContent[]) =>
+    new HtmlElement("label").contents(contents);
 
 /**
  * <html>
@@ -166,28 +170,28 @@ export const Label = (...contents: HtmlElementContent[]) => new HtmlElement('lab
  * @return {HtmlElement}
  * @constructors
  */
-export const Html = (...contents: HtmlElementContent[]) => new HtmlElement('html').contents(contents);
+export const Html = (...contents: HtmlElementContent[]) =>
+    new HtmlElement("html").contents(contents);
 
 /**
  * <!DOCTYPE html>
- * @param content
  * @return {*}
  * @constructor
  */
-export const Doctype = () => RawHtml(`<!DOCTYPE html>`)
+export const Doctype = () => RawHtml(`<!DOCTYPE html>`);
 
 /**
  * <title>
  * @param content
  * @return {HtmlElement}
  */
-export const Title = (content: string) => new HtmlElement('title').content(content)
+export const Title = (content: string) => new HtmlElement("title").content(content);
 
 /**
  * <link>
  * @return {HtmlElement}
  */
-export const Link = () => new HtmlElement('link').noContent();
+export const Link = () => new HtmlElement("link").noContent();
 
 /**
  * <section>
@@ -195,7 +199,8 @@ export const Link = () => new HtmlElement('link').noContent();
  * @return {HtmlElement}
  * @constructor
  */
-export const Section = (...contents: HtmlElementContent[]) => new HtmlElement('section').contents(contents);
+export const Section = (...contents: HtmlElementContent[]) =>
+    new HtmlElement("section").contents(contents);
 
 /**
  * <form>
@@ -203,4 +208,5 @@ export const Section = (...contents: HtmlElementContent[]) => new HtmlElement('s
  * @return {HtmlElement}
  * @constructor
  */
-export const Form = (...contents: HtmlElementContent[]) => new HtmlElement('form').contents(contents);
+export const Form = (...contents: HtmlElementContent[]) =>
+    new HtmlElement("form").contents(contents);

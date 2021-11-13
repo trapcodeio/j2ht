@@ -1,6 +1,6 @@
-const {Section, Container} = require("./bulma-components");
-const {Elements, RawHtml} = require("../../");
-const {Doctype, Body, Html} = require("../../js/elements");
+const { Section, Container } = require("./bulma-components");
+const { Elements, RawHtml } = require("../../");
+const { Doctype, Body, Html } = require("../../elements");
 
 module.exports = (...contents) => {
     return Elements(
@@ -15,6 +15,6 @@ module.exports = (...contents) => {
                 </head>
             `),
             Body(Section(Container(...contents)))
-        ).attr('lang', 'en')
-    )
-}
+        ).attr("lang", "en")
+    );
+};

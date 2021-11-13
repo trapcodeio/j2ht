@@ -1,2 +1,5 @@
 test
 .idea
+
+*.ts
+!.d.ts

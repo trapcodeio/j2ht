@@ -1,7 +1,7 @@
-import fs = require('fs');
-import pretty = require('pretty');
-import HtmlElement = require('./lib/HtmlElement');
-import {HtmlElementContent} from "./lib/custom_types";
+import fs = require("fs");
+import pretty = require("pretty");
+import HtmlElement = require("./lib/HtmlElement");
+import { HtmlElementContent } from "./lib/custom_types";
 
 /**
  * RawHtml
@@ -13,13 +13,12 @@ export const RawHtml = (...contents: HtmlElementContent[]) => {
     for (const index in contents) {
         const val = contents[index];
         if (typeof val === "string") {
-            contents[index] = val.trim()
+            contents[index] = val.trim();
         }
     }
 
-    return new HtmlElement('').contents(contents);
+    return new HtmlElement("").contents(contents);
 };
-
 
 /**
  * Builds an array of elements
@@ -27,7 +26,8 @@ export const RawHtml = (...contents: HtmlElementContent[]) => {
  * @return {*}
  * @constructor
  */
-export const Elements = (...contents: any[]): string => HtmlElement.buildContent(contents, {excludeHTMLtag: true});
+export const Elements = (...contents: any[]): string =>
+    HtmlElement.buildContent(contents, { excludeHTMLtag: true });
 
 /**
  * Load contents from file.
@@ -43,5 +43,4 @@ export const FromFile = (filePath: string) => RawHtml(fs.readFileSync(filePath).
  */
 export const el = (element: any, ...contents: any[]) => new HtmlElement(element).contents(contents);
 
-
-export {HtmlElement, pretty};
+export { HtmlElement, pretty };

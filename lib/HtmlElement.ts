@@ -1,7 +1,6 @@
-import {HtmlCreatorData, HtmlElementContent, StringToAnyObject} from "./custom_types";
-const htmlCreator = require('html-creator');
+import { HtmlCreatorData, HtmlElementContent, StringToAnyObject } from "./custom_types";
 
-
+const htmlCreator = require("html-creator");
 
 class HtmlElement {
     // Element Data
@@ -13,9 +12,7 @@ class HtmlElement {
      * @param config
      */
     static buildContent(content: any, config: StringToAnyObject): string {
-        return new htmlCreator(
-            HtmlElement.parseContent(content)
-        ).renderHTML(config)
+        return new htmlCreator(HtmlElement.parseContent(content)).renderHTML(config);
     }
 
     /**
@@ -24,18 +21,16 @@ class HtmlElement {
      */
     static parseContent(content: HtmlElementContent | HtmlElementContent[]): any {
         if (Array.isArray(content)) {
-
             if (content.length === 1) {
                 if (Array.isArray(content[0])) {
-                    return this.parseContent(content[0])
+                    return this.parseContent(content[0]);
                 } else if (typeof content[0] === "function") {
-                    return this.parseContent(content[0]())
+                    return this.parseContent(content[0]());
                 } else {
                     content = content[0];
                 }
             } else {
-
-                content = processContent(content)
+                content = processContent(content);
             }
         }
 
@@ -44,10 +39,10 @@ class HtmlElement {
         }
 
         if (typeof content !== "string" && !Array.isArray(content)) {
-            content = [content]
+            content = [content];
         }
 
-        return content
+        return content;
     }
 
     constructor(type: string) {
@@ -55,9 +50,9 @@ class HtmlElement {
             type: type,
             attributes: {},
             class: [],
-            content: '',
+            content: "",
             isDynamic: false
-        }
+        };
     }
 
     /**
@@ -66,7 +61,7 @@ class HtmlElement {
      */
     tag(tag: string): this {
         this.data.type = tag;
-        return this
+        return this;
     }
 
     /**
@@ -93,7 +88,7 @@ class HtmlElement {
     noContent(): this {
         // @ts-ignore
         delete this.data.content;
-        return this
+        return this;
     }
 
     /**
@@ -101,7 +96,7 @@ class HtmlElement {
      * @param $class
      */
     class($class: string): this {
-        const classes = $class.split(' ');
+        const classes = $class.split(" ");
 
         for (const item of classes) {
             if (item.trim() && this.data.class && !this.data.class.includes(item)) {
@@ -118,10 +113,7 @@ class HtmlElement {
      * @param replace
      */
     classReplace(search: string, replace: string): this {
-
-        this.data.class = this.data.class.join(' ')
-            .replace(search, replace)
-            .split('');
+        this.data.class = this.data.class.join(" ").replace(search, replace).split("");
 
         return this;
     }
@@ -137,7 +129,7 @@ class HtmlElement {
                 this.data.attributes = {
                     ...this.data.attributes,
                     ...key
-                }
+                };
             } else {
                 this.data.attributes[key] = value;
             }
@@ -150,7 +142,7 @@ class HtmlElement {
      * @param key
      */
     removeAttribute(key: string): this {
-        delete this.data.attributes[key]
+        delete this.data.attributes[key];
         return this;
     }
 
@@ -170,7 +162,7 @@ class HtmlElement {
         if (this.data.class.length) {
             // @ts-ignore
             delete data.class;
-            data.attributes.class = this.data.class.join(' ').trim();
+            data.attributes.class = this.data.class.join(" ").trim();
         }
 
         return data;
@@ -182,7 +174,7 @@ class HtmlElement {
      */
     render(excludeHTMLtag = true): string {
         const data = this.htmlCreatorData();
-        return new htmlCreator([data]).renderHTML({excludeHTMLtag});
+        return new htmlCreator([data]).renderHTML({ excludeHTMLtag });
     }
 
     /**
@@ -198,10 +190,10 @@ class HtmlElement {
      * @param args
      */
     apply(modifier: (instance: this, ...args: any[]) => this, ...args: any[]): this {
-        if (modifier && typeof modifier === 'function') {
+        if (modifier && typeof modifier === "function") {
             return modifier(this, ...args);
         }
-        return this
+        return this;
     }
 
     /**
@@ -209,12 +201,12 @@ class HtmlElement {
      */
     isDynamic(): this {
         this.data.isDynamic = true;
-        return this
+        return this;
     }
 }
 
 const processContent = (content: HtmlElementContent[]): any => {
-    const contents = []
+    const contents = [];
 
     for (let item of content) {
         if (typeof item === "function") {
@@ -223,14 +215,14 @@ const processContent = (content: HtmlElementContent[]): any => {
 
         if (item) {
             if (item instanceof HtmlElement) {
-                contents.push(item.htmlCreatorData())
+                contents.push(item.htmlCreatorData());
             } else {
-                contents.push(item)
+                contents.push(item);
             }
         }
     }
 
     return contents;
-}
+};
 
 export = HtmlElement;
